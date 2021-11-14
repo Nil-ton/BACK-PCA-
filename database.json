@@ -1,0 +1,29 @@
+{
+  "html": [
+    {
+      "page": "html",
+      "title": "HTML",
+      "img": "https://s2.glbimg.com/DPgnsS45MwEPkBVrdg5-y3EAyKw=/e.glbimg.com/og/ed/f/original/2018/10/22/103927770_maxresdefault.jpg",
+      "subtitle": "Artigos html",
+      "article": "dasdasdasdas"
+    }
+  ],
+  "css": [
+    {
+      "page": "css",
+      "title": "CSS",
+      "img": "https://s2.glbimg.com/DPgnsS45MwEPkBVrdg5-y3EAyKw=/e.glbimg.com/og/ed/f/original/2018/10/22/103927770_maxresdefault.jpg",
+      "subtitle": "Artigos Css",
+      "article": "asdasdasd"
+    }
+  ],
+  "js": [
+    {
+      "page": "js",
+      "title": "JS",
+      "img": "https://s2.glbimg.com/DPgnsS45MwEPkBVrdg5-y3EAyKw=/e.glbimg.com/og/ed/f/original/2018/10/22/103927770_maxresdefault.jpg",
+      "subtitle": "Artigos javascript",
+      "article": "asdasdasdas"
+    }
+  ]
+}
