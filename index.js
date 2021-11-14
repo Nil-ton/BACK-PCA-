@@ -38,7 +38,7 @@ app.get('/:page',(req,res) => {
   const fileDataRead = fs.readFileSync(path.resolve(__dirname,'database.json'), 'utf-8')
   const fileDataModified = JSON.parse(fileDataRead)
 
-  res.json(fileDataModified[req.params.page])
+  res.json(path.resolve(__dirname,'database.json'))
 })
 
 app.delete('/delete/:index',(req,res) => {
