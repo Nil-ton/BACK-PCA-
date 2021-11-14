@@ -6,16 +6,7 @@ const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
 
-app.use((req,res,next) => {
-  res.header('Access-Control-Allow-Origin', "*")
-  res.header("Access-Control-Allow-Header", "Content-Type, Accept, Origin")
-  if(req.method === 'OPTIONS'){
-    res.header('Access-Control-Allow-Methods', "PUT, POST, GET, PATCH, DELETE")
-    return res.status(200).send({})
-  }
-  app.use(cors())
-  next()
-})
+app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
