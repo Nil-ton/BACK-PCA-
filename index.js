@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000
 app.use(cors({
   origin:'*', 
   credentials:true,
-  optionSuccessStatus:200,
+  optionSuccessStatus:200
 }))
 
 app.use(express.json())
