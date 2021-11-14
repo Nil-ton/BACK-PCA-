@@ -6,12 +6,7 @@ const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
 
-app.use((req,res,next) => {
-  res.header('Access-Control-Allow-Origin', "*")
-  res.header('Access-Control-Allow-Methods', "PUT, POST, GET, PATCH, DELETE")
-  app.use(cors())
-  next()
-})
+app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -38,7 +33,7 @@ app.get('/:page',(req,res) => {
   const fileDataRead = fs.readFileSync(path.resolve(__dirname,'database.json'), 'utf-8')
   const fileDataModified = JSON.parse(fileDataRead)
 
-  res.json(path.resolve(__dirname,'database.json'))
+  res.json(fileDataModified[req.params.page])
 })
 
 app.delete('/delete/:index',(req,res) => {
