@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --padding-page: 30px;
+    --padding-slogan: 100px;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: Arial, Helvetica, sans-serif;
+
+    --header-background: radial-gradient(circle at 38% 32%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 34% 62%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 3% 32%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 28% 87%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 15% 30%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 64% 45%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 3% 100%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 74% 78%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 92% 23%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 100% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 43% 31%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 4%,transparent 4%, transparent 96%),linear-gradient(377deg, rgb(164, 0, 244),rgb(57, 10, 184));
+    --shadow-box-a: rgba(0,0,255,.2);
+    --hover-a: linear-gradient(-2145deg,  #7f09ee,#7f09ee,rgb(7, 5, 128));
+
+    --main-color: black;
+    --main-color-a: rgb(53, 0, 245);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  color: white;
+}
+ul {
+  list-style: none;
+}
+
+a{
+  color: white;
+  font-family: var(--font-secondary);
+  text-decoration: none;
+}
+/* index */
+header {
+  background: var(--header-background);
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    'nav nav nav'
+    'slogan slogan slogan'
+    'btn btn btn'
+  ;
+}
+
+/* nav */
+.nav_wrap{
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-page);
+  grid-area: nav;
+}
+
+.nav_wrap ul{
+  display: flex;
+}
+
+.nav_wrap a{
+  text-decoration: none;
+  font-weight: bolder;
+  padding: 10px;
+  position: relative;
+}
+.nav_wrap a:after{
+  content: "";
+  position: absolute;
+  background: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -1px;
+}
+
+.nav_wrap a:hover::after{
+  width: 0;
+  animation: nav_effect .5s forwards;
+}
+
+@keyframes nav_effect{
+  to{
+    width: 100%;
+  }
+}
+
+/* slogan */ 
+
+.slogan_wrap{
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-slogan);
+  grid-area: slogan;
+}
+
+.slogan_text_wrap{
+  padding-top: 150px;
+  width: 450px;
+}
+
+.slogan_text_wrap h3{
+  font-family: var(--font-primary);
+  padding-top: 10px;
+}
+
+.slogan_wrap img {
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 1025px) {
+  .slogan_wrap img {
+    display: none;
+  }
+
+  .slogan_text_wrap{
+    padding-top: 0px;
+  }
+}
+
+@media (max-height: 730px) {
+  .slogan_wrap img {
+    width: 300px;
+    height: 300px;
+  }
+  .slogan_wrap{
+    padding: 0 100px;
+  }
+  header{
+    height: 100vh;
+  }
+}
+
+/* btn */
+
+.btn_wrap{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  animation: btn 1.5s forwards;
+  grid-area: btn;
+}
+
+@keyframes btn {
+  from{
+    transform: translateX(-800px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+
+.btn_wrap a{
+  font-size: 20px;
+  background:transparent;
+  padding: 10px;
+  border-radius: 8%;
+  box-shadow: 2px 2px 2px 2px var(--shadow-box-a);
+  transition: top, left, right, bottom, 100ms ease-in-out;
+}
+.btn_wrap a:hover{
+  background: var(--hover-a)
+}
+
+/* main */
+main{
+  color: var(--main-color);
+  padding: var(--padding-page);
+}
+
+main .post div{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--padding-page);
+}
+
+/* table */
+
+ .table{
+  display: flex; 
+  padding:30px;
+  margin: 30px;
+  gap:30px; 
+  border-top: 1px solid black;
+}
+.table .wrap-table{
+  display:flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  padding:20px; 
+  max-width: 60%;
+}
+.table img{
+  width: 400px;
+  height: 200px;
+}
+@media (max-width: 845px){
+  element .table{
+    flex-direction: column;
+    align-items: center;
+    margin: 0
+  }
+  .table img{
+    max-width: 200px;
+    max-height: 100px;
+  }
+}
+
+.table .wrap-table h1 a{
+  color: blue;
+}
+.table .p{
+  color: black; 
+  font-size: 1.3em; 
+  word-break: break-word;
+}

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --padding-page: 30px;
+    --padding-slogan: 100px;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: Arial, Helvetica, sans-serif;
+
+    --header-background: radial-gradient(circle at 52% 84%, rgba(194, 194, 194,0.06) 0%, rgba(194, 194, 194,0.06) 18%,transparent 18%, transparent 100%),radial-gradient(circle at 38% 97%, rgba(239, 239, 239,0.06) 0%, rgba(239, 239, 239,0.06) 20%,transparent 20%, transparent 100%),radial-gradient(circle at 86% 17%, rgba(210, 210, 210,0.06) 0%, rgba(210, 210, 210,0.06) 61%,transparent 61%, transparent 100%),radial-gradient(circle at 6% 48%, rgba(91, 91, 91,0.06) 0%, rgba(91, 91, 91,0.06) 27%,transparent 27%, transparent 100%),radial-gradient(circle at 27% 63%, rgba(86, 86, 86,0.06) 0%, rgba(86, 86, 86,0.06) 30%,transparent 30%, transparent 100%),radial-gradient(circle at 2% 91%, rgba(182, 182, 182,0.06) 0%, rgba(182, 182, 182,0.06) 29%,transparent 29%, transparent 100%),linear-gradient(331deg, rgb(203,177,120),rgb(227, 87, 5));
+    --shadow-box-a: rgba(0,0,255,.2);
+    --hover-a: linear-gradient(45deg,  #eb6710,rgba(241, 151, 7, 0.911));
+
+    --main-color: black;
+    --main-color-a: rgb(53, 0, 245);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  color: white;
+}
+ul {
+  list-style: none;
+}
+
+a{
+  color: white;
+  font-family: var(--font-secondary);
+  text-decoration: none;
+}
+/* index */
+header {
+  background: var(--header-background);
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    'nav nav nav'
+    'slogan slogan slogan'
+    'btn btn btn'
+  ;
+}
+
+/* nav */
+.nav_wrap{
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-page);
+  grid-area: nav;
+}
+
+.nav_wrap ul{
+  display: flex;
+}
+
+.nav_wrap a{
+  text-decoration: none;
+  font-weight: bolder;
+  padding: 10px;
+  position: relative;
+}
+.nav_wrap a:after{
+  content: "";
+  position: absolute;
+  background: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -1px;
+}
+
+.nav_wrap a:hover::after{
+  width: 0;
+  animation: nav_effect .5s forwards;
+}
+
+@keyframes nav_effect{
+  to{
+    width: 100%;
+  }
+}
+
+/* slogan */ 
+
+.slogan_wrap{
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-slogan);
+  grid-area: slogan;
+}
+
+.slogan_text_wrap{
+  padding-top: 150px;
+  width: 450px;
+}
+
+.slogan_text_wrap h3{
+  font-family: var(--font-primary);
+  padding-top: 10px;
+}
+
+.slogan_wrap img {
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 1025px) {
+  .slogan_wrap img {
+    display: none;
+  }
+
+  .slogan_text_wrap{
+    padding-top: 0px;
+  }
+}
+
+@media (max-height: 730px) {
+  .slogan_wrap img {
+    width: 300px;
+    height: 300px;
+  }
+  .slogan_wrap{
+    padding: 0 100px;
+  }
+  header{
+    height: 100vh;
+  }
+}
+
+/* btn */
+
+.btn_wrap{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  animation: btn 1.5s forwards;
+  grid-area: btn;
+}
+
+@keyframes btn {
+  from{
+    transform: translateX(-800px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+
+.btn_wrap a{
+  font-size: 20px;
+  background:transparent;
+  padding: 10px;
+  border-radius: 8%;
+  box-shadow: 2px 2px 2px 2px var(--shadow-box-a);
+  transition: top, left, right, bottom, 100ms ease-in-out;
+}
+.btn_wrap a:hover{
+  background: var(--hover-a)
+}
+
+/* main */
+main{
+  color: var(--main-color);
+  padding: var(--padding-page);
+}
+
+/* table */
+
+.table{
+  display: flex; 
+  padding:30px;
+  margin: 30px;
+  gap:30px; 
+  border-top: 1px solid black;
+}
+.table .wrap-table{
+  display:flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  padding:20px; 
+  max-width: 60%;
+}
+.table img{
+  width: 400px;
+  height: 200px;
+}
+@media (max-width: 845px){
+  element .table{
+    flex-direction: column;
+    align-items: center;
+    margin: 0
+  }
+  .table img{
+    max-width: 200px;
+    max-height: 100px;
+  }
+}
+
+.table .wrap-table h1 a{
+  color: blue;
+}
+.table .p{
+  color: black; 
+  font-size: 1.3em; 
+  word-break: break-word;
+}
